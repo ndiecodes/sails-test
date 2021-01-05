@@ -9,7 +9,8 @@ module.exports = {
 
   fn: async function (_, exits) {
     try {
-      const orders = await Order.find();
+      const currentUser = this.req.user;
+      const orders = await Order.find({ userId: currentUser.id });
 
       exits.success(orders);
     } catch (error) {

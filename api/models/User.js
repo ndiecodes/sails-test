@@ -21,6 +21,11 @@ module.exports = {
       type: "string",
       allowNull: true,
     },
+
+    orders: {
+      collection: "order",
+      via: "userId",
+    },
   },
   customJSON: function () {
     return _.omit(this, ["password"]);

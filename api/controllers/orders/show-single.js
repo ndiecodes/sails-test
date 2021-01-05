@@ -13,7 +13,12 @@ module.exports = {
 
   fn: async function (_, exits) {
     try {
-      const order = await Order.findOne({ id: this.req.params.id });
+      const currentUser = this.req.user;
+
+      const order = await Order.findOne({
+        id: this.req.params.id,
+        userId: currentUser.id,
+      });
 
       if (!order) {
         return exits.notFound({ message: "Order Not Found" });

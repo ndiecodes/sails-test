@@ -1,4 +1,4 @@
-const jwt = require("jsonwebtoken");
+const JWT = require("jsonwebtoken");
 
 module.exports = {
   friendlyName: "Generate new jwt token",
@@ -26,7 +26,7 @@ module.exports = {
 
     const secret = sails.config.jwtSecret || process.env.JWT_SECRET;
 
-    const token = jwt.sign(payload, secret, { expiresIn: "1d" });
+    const token = JWT.sign(payload, secret, { expiresIn: "1d" });
 
     return token;
   },

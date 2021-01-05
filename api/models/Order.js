@@ -23,5 +23,10 @@ module.exports = {
       isIn: ["drafted", "pending", "shipped", "completed", "failed"],
       defaultsTo: "drafted",
     },
+    userId: {
+      model: "user",
+      columnName: "user_id",
+      required: true,
+    },
   },
 };

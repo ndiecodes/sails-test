@@ -16,9 +16,11 @@ module.exports = {
 
   fn: async function (inputs, exits) {
     try {
+      const currentUser = this.req.user;
       const order = await Order.create({
         itemName: inputs.itemName,
         quantity: inputs.quantity,
+        userId: currentUser.id,
       }).fetch();
 
       return exits.success({ message: "Order Created Successfully", order });

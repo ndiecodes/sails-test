@@ -37,8 +37,6 @@ module.exports = {
 
       const token = await sails.helpers.generateNewJwtToken(user.email);
 
-      this.req.me = user;
-
       return exits.success({
         data: {
           user,
