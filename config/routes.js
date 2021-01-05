@@ -12,4 +12,8 @@ module.exports.routes = {
   "GET /": "home/index",
   "POST /register": "auth/register",
   "POST /login": "auth/login",
+  "POST /orders": "orders/create",
+  "GET /orders": "orders/show",
+  "GET /orders/:id": "orders/show-single",
+  "PATCH /orders/:id": "orders/update",
 };
